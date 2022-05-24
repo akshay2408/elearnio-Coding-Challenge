@@ -25,8 +25,9 @@ class AuthorsController < ApplicationController
       @author.update_talents
       @author.destroy
       render json: {message: "Author is successfully destroyed"}
+    else
+      render json:{error: "author is not able to destroy"}
     end
-    render json:{error: "author is not able to destroy"}
   end
 
   private
