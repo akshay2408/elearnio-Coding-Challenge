@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Author < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -8,7 +10,7 @@ class Author < ApplicationRecord
   has_many :courses, through: :talents
 
   def update_talents
-    author_ids = Author.ids - [self.id]
-    self.talents.update_all(author_id: author_ids.first)
+    author_ids = Author.ids - [id]
+    talents.update_all(author_id: author_ids.first)
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[show update destroy]
   def index
@@ -21,7 +23,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    render json: {message: "Course is successfully destroyed"}, status: :ok
+    render json: { message: 'Course is successfully destroyed' }, status: :ok
   end
 
   private

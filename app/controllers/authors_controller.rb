@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AuthorsController < ApplicationController
   before_action :set_author, only: %i[show update destroy]
   def index
@@ -20,13 +22,12 @@ class AuthorsController < ApplicationController
   end
 
   def destroy
-
     if Author.count > 1
       @author.update_talents
       @author.destroy
-      render json: {message: "Author is successfully destroyed"}
+      render json: { message: 'Author is successfully destroyed' }
     else
-      render json:{error: "author is not able to destroy"}
+      render json: { error: 'author is not able to destroy' }
     end
   end
 

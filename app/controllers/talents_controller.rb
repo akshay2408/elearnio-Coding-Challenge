@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TalentsController < ApplicationController
   before_action :set_talent, only: %i[show update destroy]
   def index
@@ -21,7 +23,7 @@ class TalentsController < ApplicationController
 
   def destroy
     @talent.destroy
-    render json: {message: "Talent is successfully destroyed"}, status: :ok
+    render json: { message: 'Talent is successfully destroyed' }, status: :ok
   end
 
   private
